@@ -97,7 +97,21 @@ namespace PromotionEngine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world");
+            PromotionEngineClass pe = new PromotionEngineClass();
+
+            Dictionary<string, int> scenario1 = new Dictionary<string, int>() { { "A", 1 }, { "B", 1 }, { "C", 1 } };
+            Dictionary<string, int> scenario2 = new Dictionary<string, int>() { { "A", 5 }, { "B", 5 }, { "C", 1 } };
+            Dictionary<string, int> scenario3 = new Dictionary<string, int>() { { "A", 3 }, { "B", 5 }, { "C", 1 }, { "D", 1 } };
+
+            var result1 = pe.CalculateCartTotal(scenario1);
+            var result2 = pe.CalculateCartTotal(scenario2);
+            var result3 = pe.CalculateCartTotal(scenario3);
+            var result4 = pe.CalculateCartTotal(null);
+
+            Console.WriteLine("Scenario 1 Total = " + result1);
+            Console.WriteLine("Scenario 2 Total = " + result2);
+            Console.WriteLine("Scenario 3 Total = " + result3);
+            Console.WriteLine("Scenario 4 Total = " + result4);
 
             Console.ReadLine();
         }
